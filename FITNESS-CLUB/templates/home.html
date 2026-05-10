@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Smart Gym Assistant</title>
+
+<style>
+
+body{
+font-family:Arial;
+background-image:url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+text-align:center;
+color:white;
+}
+
+.container{
+background:rgba(0,0,0,0.75);
+padding:30px;
+border-radius:12px;
+width:420px;
+margin:auto;
+margin-top:80px;
+}
+
+input,select{
+width:90%;
+padding:10px;
+margin:10px;
+border-radius:5px;
+border:none;
+}
+
+button{
+background:#28a745;
+color:white;
+padding:12px;
+border:none;
+width:95%;
+font-size:16px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#218838;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>SMART GYM AND FITNESS</h1>
+
+<div class="container">
+
+<form method="POST">
+    {% csrf_token %}
+
+<input type="number" name="weight" placeholder="Weight (kg)" required>
+
+<input type="number" name="height" placeholder="Height (cm)" required>
+
+<input type="number" name="age" placeholder="Age" required>
+
+<input type="number" name="stress" placeholder="Stress Level (1-10)" min="1" max="10" required>
+
+<select name="goal">
+
+<option value="Weight Loss">Weight Loss</option>
+<option value="Muscle Gain">Muscle Gain</option>
+<option value="General Fitness">General Fitness</option>
+
+</select>
+
+<button type="submit">Generate Fitness Plan</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

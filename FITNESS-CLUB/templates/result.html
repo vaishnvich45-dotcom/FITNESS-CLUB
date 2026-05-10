@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Fitness Result</title>
+
+<style>
+
+body{
+font-family:Arial;
+background-image:url("https://images.unsplash.com/photo-1571902943202-507ec2618e8f");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+text-align:center;
+color:white;
+}
+
+.container{
+background:rgba(0,0,0,0.75);
+width:600px;
+margin:auto;
+margin-top:50px;
+padding:25px;
+border-radius:10px;
+}
+
+.exercise{
+margin:10px;
+padding:10px;
+background:rgba(255,255,255,0.1);
+border-radius:6px;
+}
+
+a{
+text-decoration:none;
+color:#00e5ff;
+font-weight:bold;
+}
+
+a:hover{
+color:#ff9800;
+}
+
+button{
+margin-top:20px;
+padding:10px;
+background:#28a745;
+color:white;
+border:none;
+border-radius:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Your Fitness Report</h1>
+
+<p><b>BMI:</b> {{ bmi }}</p>
+
+<p><b>Category:</b> {{ category }}</p>
+
+<p><b>Goal:</b> {{ goal }}</p>
+
+<h2>Recommended Exercises</h2>
+
+{% for ex in exercises %}
+
+<div class="exercise">
+
+<a href="{{ ex.link }}" target="_blank">
+{{ ex.name }} (Click to learn exercise)
+</a>
+
+</div>
+
+{% endfor %}
+
+<h2>Diet Plan</h2>
+
+<p>{{ diet }}</p>
+
+<br>
+
+<a href="/">
+<button>Try Again</button>
+</a>
+
+</div>
+
+</body>
+</html>
