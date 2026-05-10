@@ -1,0 +1,1 @@
+web: cd gymproject && gunicorn gymproject.wsgi:application
