@@ -68,3 +68,4 @@ University of Mumbai
 ## 📌 Note
 
 This project was built as part of academic learning to explore Python web development using the Django framework.
+
